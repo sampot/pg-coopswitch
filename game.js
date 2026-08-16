@@ -1,0 +1,3 @@
+export function isSwitchOn(state){return state.players.some(p=>p.x===state.switch.x&&p.y===state.switch.y)||state.box.x===state.switch.x&&state.box.y===state.switch.y}
+export function movePlayer(state,index,dx,dy){const next=structuredClone(state),p=next.players[index],tx=p.x+dx,ty=p.y+dy;if(tx<0||tx>=next.width||ty<0||ty>=next.height)return state;if(tx===next.door.x&&ty===next.door.y&&!isSwitchOn(state))return state;if(tx===next.box.x&&ty===next.box.y){const bx=tx+dx,by=ty+dy;if(bx<0||bx>=next.width||by<0||by>=next.height)return state;next.box={x:bx,y:by}}p.x=tx;p.y=ty;return next}
+export function bothExited(s){return s.players.every(p=>p.x===s.exit.x&&p.y===s.exit.y)}
