@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rev": "dd02d38",
+  "files": [
+    "app.js",
+    "assets/box.png",
+    "functions.js",
+    "game.js",
+    "index.html",
+    "styles.css"
+  ]
+}
